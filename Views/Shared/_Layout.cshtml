@@ -1,0 +1,69 @@
+﻿ <!DOCTYPE html>
+<html lang="pt-br">
+<!--Mudei apenas a linguagem para portugues no lang =pt-br que se encontra acima-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CadastroUF</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/App/Meu_css.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" style="background-color: darkblue">
+            <div class="container" >
+                <!--<div class="container" style="">-->
+                <a class="navbar-brand" style="color:white" asp-controller="Home" asp-action="Index">Pagina Inicial</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation" style="background-color:cornflowerblue">
+                    <!--Coloquei o style="background-color:cornflowerblue" porque a caixa de menu com a tela reduzida (reponsivo)
+                     sumiu por causa do bacground-color darkblue
+                        Falta melhorar esse botão fazendo voltar o icone com tres barras na horizontal-->
+                    <span class="navbar-toggler-icon" ></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <!--Mudei a asp-controller abaixo para indicar que a página Create de usuarios deveria ser aberta -->
+                            <a class="nav-link text-light" asp-area="" asp-controller="Usuarios" asp-action="Create">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--o text-light do código abaixo deixa as letras na cor branca-->
+                            <a class="nav-link text-light" asp-area="" asp-controller="Usuarios" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color: darkblue">
+        <div class="container" style="color:white">
+            <!--A unica documentação desse projeto são os comentarios no código, logo ficará visivel no rodapé a data em que ele foi documentado(comentarios)-->
+            &copy; 2022 - Sistema UFMT  Versão 001/ 25/02/2022- <a style="color:white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/all.min.js"></script>
+    <script src="~/js/fontawesome.min.js"></script>
+    <script src="~/App/MeuScript.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

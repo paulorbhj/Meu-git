@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CadastroUF.Models.Curso>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- {Layout = null; } para não pegar a layout padrão-->
+
+<div class="text-center">
+    <h1 class="display-4">Bem Vindo</h1>
+    <p> Para acessar o sistema UFMT basta fazer Login. </p>
+    <hr />
+</div>
+<div>
+    <p>Caso ainda não seja usuário do sistema UFMT, faça cadastro</p>
+    <p> Maiores Informações Sobre a Universidade Federal de Mato Grosso Neste<a href="https://www.ufmt.br/"> Link</a>.</p>
+
+</div>
+<!--O código abaixo coloca uma imagem de fundo na página-->
+<div class="text-center" style="background-image: url(/img/a-book-gadf819ca8_640.jpg);
+      background-repeat:no-repeat; background-size:cover; background-position:center; background-attachment:fixed;">
+    <!--O style do código abaixo  deixa a letra em cor branca-->
+    <h4 style="color:white">Veja Nossos Cursos </h4>
+    <!--O style do código abaixo deixa todos os campos da tabela com letra branca-->
+    <table class="table" style="color:white">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Disciplina)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disciplina)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

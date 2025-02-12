@@ -1,0 +1,41 @@
+﻿@model CadastroUF.Models.Usuario
+
+@{
+    ViewData["Title"] = "Verificação de Dados";
+}
+
+<h1>Verifique seus Dados</h1>
+
+<div>
+    <h5>Caso alguma informação esteja incorreta, faça Login para altera-la</h5>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NomeMae)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NomeMae)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CPF)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CPF)
+            </dd>
+        </dl>
+    </div>
+</div>
+
